@@ -2,7 +2,7 @@ name: CFMOTO U6
 version: "1.0.0"
 slug: cfmoto_u6
 description: CFMOTO U6 EV telemetry via MQTT
-url: https://github.com/YOUR_USERNAME/cfmoto-u6-addon
+url: https://github.com/marquis-de-muesli/cfmoto-u6-addon
 
 arch:
   - amd64
