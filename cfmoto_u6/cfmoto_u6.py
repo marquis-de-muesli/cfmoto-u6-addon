@@ -425,7 +425,6 @@ class MqttPublisher:
     ):
 
         self.client = mqtt.Client(
-            mqtt.CallbackAPIVersion.VERSION2,
             client_id="cfmoto_u6"
         )
 
