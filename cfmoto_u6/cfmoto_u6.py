@@ -1407,6 +1407,13 @@ def main():
                         vehicle[field]
                     )
 
+            # CFMOTO reports totalRideMile in meters
+            if "totalRideMile" in state:
+                state["totalRideMile"] = (
+                    state["totalRideMile"] / 1000
+                )
+
+
             for field in BINARY_SENSOR_FIELDS:
 
                 if field in vehicle:
