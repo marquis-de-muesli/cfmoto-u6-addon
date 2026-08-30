@@ -13,9 +13,7 @@ import paho.mqtt.client as mqtt
 # CFMOTO configuration
 # ============================================================
 
-BASE_URL = (
-    "https://tapi-flkf.cfmoto-oversea.com/v1.0"
-)
+BASE_URL = "https://tapi-flkf.cfmoto-oversea.com/v1.0"
 
 APP_ID = "rRrIs3ID"
 
@@ -30,12 +28,11 @@ APP_INFO = (
 TOKEN_FILE = "/data/cfmoto_token.json"
 
 MQTT_BASE = "cfmoto/u6"
-
 DISCOVERY_PREFIX = "homeassistant"
 
 
 # ============================================================
-# Fields we deliberately NEVER publish
+# Fields never published
 # ============================================================
 
 SENSITIVE_FIELDS = {
@@ -50,129 +47,66 @@ SENSITIVE_FIELDS = {
 # ============================================================
 
 FIELD_NAMES = {
+    "bmsSoc": "Battery",
+    "hmiRidableMile": "Range",
+    "speed": "Speed",
+    "fireVoltage": "12V Voltage",
+    "gsmRxLev": "GSM Signal",
+    "gsmRxLevStr": "GSM Signal Strength",
 
-    "bmsSoc":
-        "Battery",
+    "remainingOil": "Remaining Oil",
+    "remainingOilStr": "Remaining Oil",
+    "remainingOilDisplay": "Remaining Oil Display",
 
-    "hmiRidableMile":
-        "Range",
+    "vehicleState": "Vehicle State",
 
-    "speed":
-        "Speed",
+    "totalRideMile": "Total Mileage",
+    "rideMileageMonth": "Monthly Mileage",
+    "ridingTimeMonth": "Monthly Riding Time",
+    "avgRideSpeed": "Average Speed",
+    "powerUseAvg": "Average Power Use",
 
-    "fireVoltage":
-        "12V Voltage",
+    "totalOilNum": "Total Oil Number",
 
-    "gsmRxLev":
-        "GSM Signal",
+    "oilLockState": "Oil Lock",
+    "batteryLockState": "Battery Lock",
+    "seatLockState": "Seat Lock",
+    "headLockState": "Head Lock",
 
-    "gsmRxLevStr":
-        "GSM Signal Strength",
+    "kl": "KL",
 
-    "remainingOil":
-        "Remaining Oil",
+    "chargeState": "Charging",
+    "chargeCycle": "Charge Cycles",
 
-    "remainingOilStr":
-        "Remaining Oil",
+    "greenContribution": "Green Contribution",
 
-    "remainingOilDisplay":
-        "Remaining Oil Display",
+    "isOnline": "Online",
+    "deviceState": "Device State",
 
-    "vehicleState":
-        "Vehicle State",
+    "simRemainingDays": "SIM Remaining Days",
+    "simExpire": "SIM Expiry",
+    "simServiceEnable": "SIM Service",
 
-    "totalRideMile":
-        "Total Mileage",
+    "supportRemoteUnlock": "Remote Unlock Supported",
 
-    "rideMileageMonth":
-        "Monthly Mileage",
+    "rideAnalysisFlag": "Ride Analysis",
+    "oilUseAvgFlag": "Oil Use Average",
 
-    "ridingTimeMonth":
-        "Monthly Riding Time",
+    "typeOfProduct": "Product Type",
+    "energyType": "Energy Type",
 
-    "avgRideSpeed":
-        "Average Speed",
+    "tboxIsBlank": "T-Box Blank",
+    "tboxIsSupportedDisplay": "T-Box Display Supported",
+    "tboxIsActive": "T-Box Active",
 
-    "powerUseAvg":
-        "Average Power Use",
-
-    "totalOilNum":
-        "Total Oil Number",
-
-    "oilLockState":
-        "Oil Lock",
-
-    "batteryLockState":
-        "Battery Lock",
-
-    "seatLockState":
-        "Seat Lock",
-
-    "headLockState":
-        "Head Lock",
-
-    "kl":
-        "KL",
-
-    "chargeState":
-        "Charging",
-
-    "chargeCycle":
-        "Charge Cycles",
-
-    "greenContribution":
-        "Green Contribution",
-
-    "isOnline":
-        "Online",
-
-    "deviceState":
-        "Device State",
-
-    "simRemainingDays":
-        "SIM Remaining Days",
-
-    "simExpire":
-        "SIM Expiry",
-
-    "simServiceEnable":
-        "SIM Service",
-
-    "supportRemoteUnlock":
-        "Remote Unlock Supported",
-
-    "rideAnalysisFlag":
-        "Ride Analysis",
-
-    "oilUseAvgFlag":
-        "Oil Use Average",
-
-    "typeOfProduct":
-        "Product Type",
-
-    "energyType":
-        "Energy Type",
-
-    "tboxIsBlank":
-        "T-Box Blank",
-
-    "tboxIsSupportedDisplay":
-        "T-Box Display Supported",
-
-    "tboxIsActive":
-        "T-Box Active",
-
-    "shareStatus":
-        "Share Status",
+    "shareStatus": "Share Status",
 
     "hmiRideMileFunctionSwitch":
         "Range Function Enabled",
 
-    "typeOfVehicle":
-        "Vehicle Type",
+    "typeOfVehicle": "Vehicle Type",
 
-    "pinSetState":
-        "PIN Set",
+    "pinSetState": "PIN Set",
 
     "isSupport4GupDownPower":
         "4G Power Control Supported",
@@ -180,23 +114,17 @@ FIELD_NAMES = {
     "upDownPowerStatus":
         "4G Power Status",
 
-    "motoPlay":
-        "MotoPlay",
+    "motoPlay": "MotoPlay",
+    "motoPlayType": "MotoPlay Type",
 
-    "motoPlayType":
-        "MotoPlay Type",
-
-    "isPop":
-        "Popup",
+    "isPop": "Popup",
 
     "simRemainingDaysV2":
         "SIM Remaining Days V2",
 
-    "vehicleData":
-        "Vehicle Data",
+    "vehicleData": "Vehicle Data",
 
-    "ifFirstBind":
-        "First Bind",
+    "ifFirstBind": "First Bind",
 
     "vehicleDataServiceFlag":
         "Vehicle Data Service",
@@ -207,8 +135,7 @@ FIELD_NAMES = {
     "startChargingTime":
         "Service Start Charging Time",
 
-    "freeTime":
-        "Free Time",
+    "freeTime": "Free Time",
 
     "exchangeMileage":
         "Exchange Mileage",
@@ -242,7 +169,6 @@ FIELD_NAMES = {
 
     "vehicleBrand":
         "Vehicle Brand",
-
 }
 
 
@@ -251,41 +177,19 @@ FIELD_NAMES = {
 # ============================================================
 
 FIELD_UNITS = {
-
     "bmsSoc": "%",
-
     "hmiRidableMile": "km",
-
     "speed": "km/h",
-
     "fireVoltage": "V",
-
     "gsmRxLev": "dBm",
-
     "remainingOil": "%",
-
     "totalRideMile": "km",
-
     "rideMileageMonth": "km",
-
     "ridingTimeMonth": "s",
-
     "avgRideSpeed": "km/h",
-
-    "powerUseAvg": "",
-
-    "totalOilNum": "",
-
-    "chargeCycle": "",
-
-    "greenContribution": "",
-
     "simRemainingDays": "d",
-
     "simRemainingDaysV2": "d",
-
     "exchangeMileage": "km",
-
 }
 
 
@@ -294,28 +198,13 @@ FIELD_UNITS = {
 # ============================================================
 
 FIELD_DEVICE_CLASSES = {
-
-    "bmsSoc":
-        "battery",
-
-    "hmiRidableMile":
-        "distance",
-
-    "speed":
-        "speed",
-
-    "fireVoltage":
-        "voltage",
-
-    "totalRideMile":
-        "distance",
-
-    "rideMileageMonth":
-        "distance",
-
-    "avgRideSpeed":
-        "speed",
-
+    "bmsSoc": "battery",
+    "hmiRidableMile": "distance",
+    "speed": "speed",
+    "fireVoltage": "voltage",
+    "totalRideMile": "distance",
+    "rideMileageMonth": "distance",
+    "avgRideSpeed": "speed",
 }
 
 
@@ -324,7 +213,6 @@ FIELD_DEVICE_CLASSES = {
 # ============================================================
 
 def log(message):
-
     print(
         f"[CFMOTO] {message}",
         flush=True
@@ -332,15 +220,12 @@ def log(message):
 
 
 # ============================================================
-# CFMOTO nonce
+# CFMOTO helpers
 # ============================================================
 
 def make_nonce(length=16):
 
-    chars = (
-        string.ascii_letters
-        + string.digits
-    )
+    chars = string.ascii_letters + string.digits
 
     return "".join(
         random.SystemRandom().choices(
@@ -349,10 +234,6 @@ def make_nonce(length=16):
         )
     )
 
-
-# ============================================================
-# Query serialization
-# ============================================================
 
 def serialize_query_params(params):
 
@@ -397,13 +278,10 @@ class CFMoto:
         )
 
         if query_params is not None:
-
             payload = serialize_query_params(
                 query_params
             )
-
         else:
-
             payload = body
 
         params = (
@@ -582,7 +460,83 @@ class CFMoto:
         log("Token saved.")
 
     # --------------------------------------------------------
-    # Vehicle
+    # Vehicle list / discovery
+    # --------------------------------------------------------
+
+    def vehicles(self):
+
+        params = {
+            "position": "2"
+        }
+
+        url = (
+            BASE_URL
+            + "/fuel-vehicle/servervehicle/app/"
+              "vehicle/mine"
+        )
+
+        log(
+            "Requesting vehicle list..."
+        )
+
+        response = self.session.get(
+            url,
+            params=params,
+            headers=self.headers(
+                query_params=params
+            ),
+            timeout=20
+        )
+
+        if response.status_code != 200:
+
+            raise RuntimeError(
+                f"Vehicle list HTTP "
+                f"{response.status_code}: "
+                f"{response.text}"
+            )
+
+        result = response.json()
+
+        if result.get("code") != "0":
+
+            raise RuntimeError(
+                "Vehicle list API error: "
+                + json.dumps(result)
+            )
+
+        data = result.get(
+            "data",
+            []
+        )
+
+        if isinstance(data, dict):
+
+            # Some API versions wrap the list.
+            for key in (
+                "list",
+                "vehicles",
+                "rows",
+                "records",
+                "data",
+            ):
+
+                if isinstance(
+                    data.get(key),
+                    list
+                ):
+
+                    return data[key]
+
+            return [data]
+
+        if isinstance(data, list):
+            return data
+
+        return []
+
+    # --------------------------------------------------------
+    # Vehicle detail
     # --------------------------------------------------------
 
     def get_vehicle(
@@ -693,7 +647,171 @@ def save_token(
 
 
 # ============================================================
-# Flatten nested dictionaries
+# Vehicle ID extraction
+# ============================================================
+
+def get_vehicle_id(vehicle):
+
+    if not isinstance(
+        vehicle,
+        dict
+    ):
+        return None
+
+    # Try likely ID field names.
+
+    for key in (
+        "vehicleId",
+        "id",
+        "vehicleID",
+        "vehicle_id",
+    ):
+
+        value = vehicle.get(key)
+
+        if value is not None:
+            return str(value)
+
+    return None
+
+
+def get_vehicle_name(vehicle):
+
+    if not isinstance(
+        vehicle,
+        dict
+    ):
+        return "Unknown"
+
+    for key in (
+        "vehicleName",
+        "name",
+        "vehicleModel",
+        "model",
+        "vehicleType",
+        "typeOfVehicle",
+    ):
+
+        value = vehicle.get(key)
+
+        if value:
+            return str(value)
+
+    return "Unknown"
+
+
+def discover_vehicle(
+    cf,
+    configured_vehicle_id
+):
+
+    # --------------------------------------------------------
+    # Explicit vehicle ID
+    # --------------------------------------------------------
+
+    if configured_vehicle_id:
+
+        log(
+            f"Using configured vehicle ID: "
+            f"{configured_vehicle_id}"
+        )
+
+        return str(
+            configured_vehicle_id
+        )
+
+    # --------------------------------------------------------
+    # Automatic discovery
+    # --------------------------------------------------------
+
+    vehicles = cf.vehicles()
+
+    if not vehicles:
+
+        raise RuntimeError(
+            "No CFMOTO vehicles were found."
+        )
+
+    log(
+        f"Found {len(vehicles)} "
+        f"vehicle(s)."
+    )
+
+    discovered = []
+
+    for index, vehicle in enumerate(
+        vehicles,
+        start=1
+    ):
+
+        vehicle_id = get_vehicle_id(
+            vehicle
+        )
+
+        vehicle_name = get_vehicle_name(
+            vehicle
+        )
+
+        log(
+            f"  {index}: "
+            f"{vehicle_name} "
+            f"(ID={vehicle_id})"
+        )
+
+        if vehicle_id:
+
+            discovered.append(
+                (
+                    vehicle_id,
+                    vehicle_name
+                )
+            )
+
+    if len(discovered) == 1:
+
+        vehicle_id, vehicle_name = (
+            discovered[0]
+        )
+
+        log(
+            f"Automatically selected "
+            f"{vehicle_name} "
+            f"(ID={vehicle_id})"
+        )
+
+        return vehicle_id
+
+    if len(discovered) > 1:
+
+        lines = [
+            "",
+            "Multiple CFMOTO vehicles found.",
+            "",
+            "Please set vehicle_id in the "
+            "add-on configuration.",
+            "",
+            "Available vehicles:",
+        ]
+
+        for vehicle_id, vehicle_name in discovered:
+
+            lines.append(
+                f"  {vehicle_name}: "
+                f"{vehicle_id}"
+            )
+
+        raise RuntimeError(
+            "\n".join(lines)
+        )
+
+    raise RuntimeError(
+        "Vehicles were returned by CFMOTO, "
+        "but no vehicle IDs could be identified."
+    )
+
+
+# ============================================================
+# Flatten nested data
 # ============================================================
 
 def flatten_dict(
@@ -703,7 +821,10 @@ def flatten_dict(
 
     result = {}
 
-    if not isinstance(data, dict):
+    if not isinstance(
+        data,
+        dict
+    ):
         return result
 
     for key, value in data.items():
@@ -717,7 +838,10 @@ def flatten_dict(
             else key
         )
 
-        if isinstance(value, dict):
+        if isinstance(
+            value,
+            dict
+        ):
 
             result.update(
                 flatten_dict(
@@ -726,37 +850,42 @@ def flatten_dict(
                 )
             )
 
-        elif isinstance(value, list):
+        elif isinstance(
+            value,
+            list
+        ):
 
-            # Lists aren't useful as individual HA sensors.
-            # Keep them as JSON strings.
-
-            result[full_key] = json.dumps(
+            result[
+                full_key
+            ] = json.dumps(
                 value,
                 ensure_ascii=False
             )
 
         else:
 
-            result[full_key] = value
+            result[
+                full_key
+            ] = value
 
     return result
 
 
-# ============================================================
-# Convert values for MQTT/HA
-# ============================================================
-
 def convert_value(value):
 
-    if isinstance(value, bool):
+    if isinstance(
+        value,
+        bool
+    ):
         return value
 
     if value is None:
         return None
 
-    # Convert numeric strings to numbers.
-    if isinstance(value, str):
+    if isinstance(
+        value,
+        str
+    ):
 
         stripped = value.strip()
 
@@ -792,8 +921,6 @@ class MqttPublisher:
         password
     ):
 
-        # Compatible with older Paho versions.
-
         self.client = mqtt.Client(
             client_id="cfmoto_u6"
         )
@@ -807,10 +934,6 @@ class MqttPublisher:
 
         self.host = host
         self.port = port
-
-    # --------------------------------------------------------
-    # Connect
-    # --------------------------------------------------------
 
     def connect(self):
 
@@ -829,10 +952,6 @@ class MqttPublisher:
 
         log("MQTT connected.")
 
-    # --------------------------------------------------------
-    # Publish
-    # --------------------------------------------------------
-
     def publish(
         self,
         topic,
@@ -847,10 +966,6 @@ class MqttPublisher:
             retain=retain
         )
 
-    # --------------------------------------------------------
-    # Availability
-    # --------------------------------------------------------
-
     def set_availability(
         self,
         state
@@ -860,10 +975,6 @@ class MqttPublisher:
             f"{MQTT_BASE}/availability",
             state
         )
-
-    # --------------------------------------------------------
-    # Device info
-    # --------------------------------------------------------
 
     @staticmethod
     def device_info():
@@ -885,11 +996,10 @@ class MqttPublisher:
 
             "sw_version":
                 "CFMOTO Cloud API",
-
         }
 
     # --------------------------------------------------------
-    # Generic sensor discovery
+    # Sensor discovery
     # --------------------------------------------------------
 
     def publish_sensor_discovery(
@@ -956,20 +1066,6 @@ class MqttPublisher:
             config[
                 "device_class"
             ] = device_class
-
-        # Most numerical values are measurements.
-        if field not in (
-            "totalRideMile",
-            "rideMileageMonth",
-        ):
-            config[
-                "state_class"
-            ] = "measurement"
-
-        else:
-            config[
-                "state_class"
-            ] = "total_increasing"
 
         topic = (
             f"{DISCOVERY_PREFIX}/"
@@ -1047,33 +1143,6 @@ class MqttPublisher:
                 "device_class"
             ] = "battery_charging"
 
-        elif field in (
-            "isOnline",
-            "tboxIsActive",
-            "tboxIsBlank",
-            "tboxIsSupportedDisplay",
-            "supportRemoteUnlock",
-            "rideAnalysisFlag",
-            "oilUseAvgFlag",
-            "simExpire",
-            "simServiceEnable",
-            "motoPlay",
-            "isPop",
-            "ifFirstBind",
-            "vehicleDataServiceFlag",
-            "motoplayServiceFlag",
-            "ifExchangeMileage",
-            "ifIntelligentServiceEnable",
-            "motoplayConnectionFlag",
-            "vehicleSettingDisplayFlag",
-            "hmiRideMileFunctionSwitch",
-            "isSupport4GupDownPower",
-        ):
-
-            config[
-                "device_class"
-            ] = "connectivity"
-
         topic = (
             f"{DISCOVERY_PREFIX}/"
             f"binary_sensor/"
@@ -1088,7 +1157,7 @@ class MqttPublisher:
         )
 
     # --------------------------------------------------------
-    # GPS device tracker discovery
+    # GPS discovery
     # --------------------------------------------------------
 
     def publish_gps_discovery(self):
@@ -1140,7 +1209,7 @@ class MqttPublisher:
         )
 
     # --------------------------------------------------------
-    # Publish all discovery entities
+    # Discovery
     # --------------------------------------------------------
 
     def publish_discovery(
@@ -1148,9 +1217,9 @@ class MqttPublisher:
         flattened_data
     ):
 
-        for field, value in flattened_data.items():
-
-            # Boolean values become binary sensors.
+        for field, value in (
+            flattened_data.items()
+        ):
 
             if isinstance(
                 value,
@@ -1160,8 +1229,6 @@ class MqttPublisher:
                 self.publish_binary_discovery(
                     field
                 )
-
-            # Don't create sensors for arbitrary JSON blobs.
 
             elif isinstance(
                 value,
@@ -1179,19 +1246,17 @@ class MqttPublisher:
         self.publish_gps_discovery()
 
         log(
-            f"MQTT Discovery published "
-            f"for {len(flattened_data)} fields."
+            "MQTT Discovery published."
         )
 
 
 # ============================================================
-# Authentication helper
+# Authentication
 # ============================================================
 
 def authenticate(
     email,
-    password,
-    vehicle_id
+    password
 ):
 
     cf = CFMoto()
@@ -1208,34 +1273,18 @@ def authenticate(
             "userId"
         )
 
-        try:
+        log(
+            "Trying saved CFMOTO token..."
+        )
 
-            vehicle = cf.get_vehicle(
-                vehicle_id
-            )
-
-            return cf, vehicle
-
-        except Exception as e:
-
-            log(
-                f"Saved token rejected: {e}"
-            )
-
-    # --------------------------------------------------------
-    # Fresh login
-    # --------------------------------------------------------
+        return cf
 
     cf.login(
         email,
         password
     )
 
-    vehicle = cf.get_vehicle(
-        vehicle_id
-    )
-
-    return cf, vehicle
+    return cf
 
 
 # ============================================================
@@ -1245,7 +1294,7 @@ def authenticate(
 def main():
 
     # --------------------------------------------------------
-    # Load add-on configuration
+    # Configuration
     # --------------------------------------------------------
 
     with open(
@@ -1264,9 +1313,12 @@ def main():
         "cfmoto_password"
     ]
 
-    vehicle_id = options[
-        "vehicle_id"
-    ]
+    configured_vehicle_id = (
+        options.get(
+            "vehicle_id",
+            ""
+        ).strip()
+    )
 
     mqtt_host = options[
         "mqtt_host"
@@ -1291,10 +1343,6 @@ def main():
             "poll_interval"
         ]
     )
-
-    # --------------------------------------------------------
-    # Validate configuration
-    # --------------------------------------------------------
 
     if not email:
 
@@ -1322,34 +1370,100 @@ def main():
     mqtt_pub.connect()
 
     # --------------------------------------------------------
-    # Authenticate + initial data
+    # Authentication
     # --------------------------------------------------------
 
-    cf, vehicle = authenticate(
+    cf = authenticate(
         email,
-        password,
-        vehicle_id
+        password
     )
 
     # --------------------------------------------------------
-    # Flatten data
+    # Determine vehicle
+    # --------------------------------------------------------
+
+    try:
+
+        vehicle_id = discover_vehicle(
+            cf,
+            configured_vehicle_id
+        )
+
+    except Exception as e:
+
+        # A saved token may have expired.
+        # Retry discovery with a fresh login.
+
+        log(
+            f"Vehicle discovery failed: {e}"
+        )
+
+        log(
+            "Trying fresh login..."
+        )
+
+        cf = CFMoto()
+
+        cf.login(
+            email,
+            password
+        )
+
+        vehicle_id = discover_vehicle(
+            cf,
+            configured_vehicle_id
+        )
+
+    log(
+        f"Monitoring vehicle ID: "
+        f"{vehicle_id}"
+    )
+
+    # --------------------------------------------------------
+    # Initial vehicle request
+    # --------------------------------------------------------
+
+    try:
+
+        vehicle = cf.get_vehicle(
+            vehicle_id
+        )
+
+    except Exception as e:
+
+        log(
+            f"Initial vehicle request failed: "
+            f"{e}"
+        )
+
+        log(
+            "Trying fresh login..."
+        )
+
+        cf = CFMoto()
+
+        cf.login(
+            email,
+            password
+        )
+
+        vehicle = cf.get_vehicle(
+            vehicle_id
+        )
+
+    # --------------------------------------------------------
+    # Discovery
     # --------------------------------------------------------
 
     flattened = flatten_dict(
         vehicle
     )
 
-    # Convert numeric strings.
-
     flattened = {
         key: convert_value(value)
         for key, value
         in flattened.items()
     }
-
-    # --------------------------------------------------------
-    # Discovery
-    # --------------------------------------------------------
 
     mqtt_pub.publish_discovery(
         flattened
@@ -1360,16 +1474,12 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Main loop
+    # Polling loop
     # --------------------------------------------------------
 
     while True:
 
         try:
-
-            # ------------------------------------------------
-            # Get fresh vehicle data
-            # ------------------------------------------------
 
             try:
 
@@ -1380,11 +1490,12 @@ def main():
             except Exception as e:
 
                 log(
-                    f"Vehicle request failed: {e}"
+                    f"Vehicle request failed: "
+                    f"{e}"
                 )
 
                 log(
-                    "Trying fresh CFMOTO login..."
+                    "Re-authenticating..."
                 )
 
                 cf = CFMoto()
@@ -1399,7 +1510,7 @@ def main():
                 )
 
             # ------------------------------------------------
-            # Flatten
+            # Flatten data
             # ------------------------------------------------
 
             flattened = flatten_dict(
@@ -1413,7 +1524,7 @@ def main():
             }
 
             # ------------------------------------------------
-            # Publish complete state
+            # Normal MQTT state
             # ------------------------------------------------
 
             mqtt_pub.publish(
@@ -1425,9 +1536,7 @@ def main():
             )
 
             # ------------------------------------------------
-            # Publish RAW API response
-            #
-            # Sensitive fields are removed.
+            # Raw non-sensitive API response
             # ------------------------------------------------
 
             raw_data = dict(
@@ -1489,7 +1598,6 @@ def main():
 
                         "longitude":
                             float(longitude),
-
                     }
 
                     if altitude is not None:
@@ -1509,15 +1617,17 @@ def main():
                         dict
                     ):
 
-                        report_time = report.get(
-                            "datetime"
+                        datetime_value = (
+                            report.get(
+                                "datetime"
+                            )
                         )
 
-                        if report_time:
+                        if datetime_value:
 
                             gps_payload[
                                 "report_datetime"
-                            ] = report_time
+                            ] = datetime_value
 
                     mqtt_pub.publish(
                         f"{MQTT_BASE}/gps",
@@ -1535,7 +1645,7 @@ def main():
             )
 
             # ------------------------------------------------
-            # Log
+            # Logging
             # ------------------------------------------------
 
             log(
